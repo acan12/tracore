@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'devise'
+gem 'faker'
+gem "pg", "~> 0.14.1"
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
+# Gems used for oauth2.0 plugin 
+gem "oauth-plugin", "0.4.0"
+gem "doorkeeper", '~> 0.6.2'
+gem "oauth2"
 
 # Gems used only for assets and not required
 # in production environments by default.
