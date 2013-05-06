@@ -9,6 +9,7 @@ gem "pg", "~> 0.14.1"
 gem "oauth-plugin", "0.4.0"
 gem "doorkeeper", '~> 0.6.2'
 gem "oauth2"
+gem "whenever", require: false
 gem "sidekiq"
 
 # Gems used only for assets and not required
