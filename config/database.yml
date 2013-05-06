@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: traco_development
+  database: tracore_db
   pool: 5
   username: postgres
   host: localhost
@@ -27,9 +27,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: dbaac38g64kla4
+  database: dbe52hebo27bcf
   pool: 5
-  username: pjsnylyabxztlq
-  host: ec2-23-21-85-231.compute-1.amazonaws.com
+  username: rqdnikquspfkns
+  host: ec2-23-21-170-190.compute-1.amazonaws.com
   port: 5432
-  password: Yd3N2B-FJCjWMt0_zpzYXNaY2E
+  password: G-2Okn6mBw2nr4omg6ZWPWejMS
