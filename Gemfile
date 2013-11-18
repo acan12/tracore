@@ -1,42 +1,32 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'devise'
-gem 'faker'
-gem "pg", "~> 0.14.1"
-
-# Gems used for oauth2.0 plugin 
-gem "oauth-plugin", "0.4.0"
-gem "doorkeeper", '~> 0.6.2'
-gem "oauth2"
+gem "pg"
 gem "whenever", require: false
-gem "sidekiq"
+gem 'omniauth-facebook'
+gem 'jbuilder'
 
-# Gems used only for assets and not required
-# in production environments by default.
+group :development do
+  gem 'quiet_assets'
+  gem 'pry-nav'
+end
+
+group :development, :test do 
+  gem 'mailcatcher'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'  
+end
+
+group :test do 
+  gem 'shoulda-matchers'
+  gem 'terminal-notifier-guard'
+  gem "guard-rspec"
+  gem "guard-zeus"
+  gem 'database_cleaner'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
