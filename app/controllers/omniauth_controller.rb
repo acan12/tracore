@@ -1,7 +1,7 @@
 class OmniauthController < ApplicationController
   def callback
     user = User.from_omniauth(auth_hash)
-    redirect_to api_v1_user_path(user, token: user.default_token.token)
+    render json: { token: user.default_token.token }
   end
 
   def omniauth_failure
