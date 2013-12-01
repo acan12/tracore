@@ -9,14 +9,14 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth_hash)
     user = where(email: auth_hash.info.email).first
-    return user if user.present?
-
-    user = new do |u|
-      u.username = auth_hash.info.nickname
-      u.email = auth_hash.info.email
-      u.password = Digest::MD5.hexdigest(SecureRandom.hex(4))
+    if user.blank?
+      user = new do |u|
+        u.username = auth_hash.info.nickname
+        u.email = auth_hash.info.email
+        u.password = Digest::MD5.hexdigest(SecureRandom.hex(4))
+      end
+      user.save
     end
-    user.save
     user.authentifications.from_omniauth!(auth_hash)
     user.authentifications.build_token!
     user
@@ -31,13 +31,17 @@ class User < ActiveRecord::Base
     authentifications.where(provider: "tracore", uid: "tracore").first
   end
 
+  def facebook
+    a = authentifications.where(provider: 'facebook').first
+    @facebook ||= Koala::Facebook::API.new(a.try(:token))
+  end
 
   private
   def before_save_callback
-    password = Digest::MD5.hexdigest(password) if password_changed?
+    self.password = Digest::MD5.hexdigest(self.password) if password_changed?
   end
 
   def before_create_callback
-    password = Digest::MD5.hexdigest(password)
+    self.password = Digest::MD5.hexdigest(self.password)
   end
 end
