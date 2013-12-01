@@ -5,6 +5,7 @@ gem "pg"
 gem "whenever", require: false
 gem 'omniauth-facebook'
 gem 'jbuilder'
+gem 'koala'
 
 group :development do
   gem 'quiet_assets'

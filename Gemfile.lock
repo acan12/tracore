@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    addressable (2.3.5)
     arel (3.0.2)
     builder (3.0.4)
     chronic (0.9.1)
@@ -80,6 +81,10 @@ GEM
     json (1.7.7)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    koala (1.6.0)
+      addressable (~> 2.2)
+      faraday (~> 0.8)
+      multi_json (~> 1.3)
     listen (1.3.1)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -224,6 +229,7 @@ DEPENDENCIES
   guard-rspec
   guard-zeus
   jbuilder
+  koala
   mailcatcher
   omniauth-facebook
   pg
