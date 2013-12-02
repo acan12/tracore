@@ -4,6 +4,9 @@ Tracore::Application.routes.draw do
   namespace :api, constraints: { format: :json } do
     namespace :v1 do
       resources :users
+      namespace :facebook do
+        resources :friends
+      end
     end
   end
 end
