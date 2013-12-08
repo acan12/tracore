@@ -6,6 +6,7 @@ gem "whenever", require: false
 gem 'omniauth-facebook'
 gem 'jbuilder'
 gem 'koala'
+gem 'thin'
 
 group :development do
   gem 'quiet_assets'
