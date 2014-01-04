@@ -4,28 +4,35 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   database: tracore_db
-  pool: 5
+  username: root
+  password: "120881"
   host: localhost
+  pool: 24
+  # socket: /Applications/MAMP/tmp/mysql/mysql.sock
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: postgresql
-  encoding: unicode
-  database: traco_test
-  pool: 5
+  adapter: mysql2
+  encoding: utf8
+  database: tracore_db
+  username: root
+  password: "120881"
   host: localhost
+  pool: 24
+  # socket: /Applications/MAMP/tmp/mysql/mysql.sock
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: ddpmelcvvoqonn
-  pool: 5
-  username: wldgmgqywvsdhl
-  host: ec2-54-204-31-33.compute-1.amazonaws.com
-  port: 5432
-  password: l6lg8oTYh0NDuUWZonP352Xqrf
+  adapter: mysql2
+  encoding: utf8
+  database: heroku_d2c32f2ec822b9f
+  username: b00df0d1c3a14a
+  password: 67b989d2
+  host: us-cdbr-east-04.cleardb.com
+  # pool: 24
+  # socket: /Applications/MAMP/tmp/mysql/mysql.sock

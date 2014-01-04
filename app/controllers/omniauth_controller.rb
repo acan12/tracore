@@ -1,7 +1,8 @@
+# Access from web connections
 class OmniauthController < ApplicationController
   def callback
     user = User.from_omniauth(auth_hash)
-    render json: { token: user.default_token.token }
+    render json: { "token" => user.default_token, "user-agent" => 'web' }
   end
 
   def omniauth_failure

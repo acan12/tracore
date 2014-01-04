@@ -6,5 +6,10 @@ class ModifyUsers < ActiveRecord::Migration
       remove_column :users, c.to_sym
     end
     add_column :users, :password, :string
+    add_column :users, :token, :string
+    add_column :users, :mobile, :boolean
+    add_column :users, :web, :boolean
+    
+    add_index :users, [:mobile, :web]
   end
 end

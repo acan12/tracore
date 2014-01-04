@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(:version => 20131118040550) do
   create_table "authentifications", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
+    t.string   "token"
+    t.string   "secret"
+    t.string   "expires_at"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "token"
-    t.string   "secret"
   end
 
   create_table "users", :force => true do |t|
@@ -29,8 +30,12 @@ ActiveRecord::Schema.define(:version => 20131118040550) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.string   "password"
+    t.string   "token"
+    t.boolean  "mobile"
+    t.boolean  "web"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["mobile", "web"], :name => "index_users_on_mobile_and_web"
 
 end

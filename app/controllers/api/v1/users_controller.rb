@@ -3,6 +3,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   respond_to :json
 
+  
   def new
     @user = User.new
     respond_with @user

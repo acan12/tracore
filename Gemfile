@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem "pg"
+# gem "pg"
+gem 'mysql2'  # change into mysql for DB
 gem "whenever", require: false
 gem 'omniauth-facebook'
 gem 'jbuilder'
 gem 'koala'
 gem 'thin'
+gem 'rabl'
+gem "slim", "1.2.2"
 
 group :development do
   gem 'quiet_assets'
