@@ -2,11 +2,10 @@ Core application support Traco project with REST API standart convention
 
 Modified Jan 5, 2013 :
 
-+-+-+-+-+-+                       +-+-+-+-+-+  
-+ Android + ------> token ------- + server  +---------> Generate Tracore token (User model)
-+-+-+-+-+-+                       +         +
-                                  +         +---------> Store Provider token   (Authentification model) 
-                                  +-+-+-+-+-+
+                       
+Android  ------> token ------- server --------> Generate Tracore token (User model) 
+                                      --------> Store Provider token   (Authentification model) 
+                                  
 
 
 * just provide one credential for one provider
