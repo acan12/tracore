@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :username
-  validates_presence_of :email, :username, :password
+  validates_presence_of :username, :password
 
   has_many :authentifications
 
   before_save :before_save_callback
   before_create :before_create_callback
 
+  
   # created by -Ary
   def self.create_mobile_authentication(access_token)
     graph = Koala::Facebook::API.new(access_token)
@@ -16,7 +17,7 @@ class User < ActiveRecord::Base
     if user.blank?
       user = new do |u|
         u.username = profile["username"]
-        u.email = "admin@traco.com"
+        u.email = ""
         u.password = Digest::MD5.hexdigest(SecureRandom.hex(4))
         u.token = SecureRandom.hex
         u.mobile = true
